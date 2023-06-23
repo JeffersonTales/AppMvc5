@@ -7,24 +7,25 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink(linkText:"Create New",
+                     actionName: "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(expression: model => model.Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Email)
+            @Html.DisplayNameFor(expression: model => model.Email)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CPF)
+            @Html.DisplayNameFor(expression: model => model.CPF)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DataMatricula)
+            @Html.DisplayNameFor(expression: model => model.DataMatricula)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Ativo)
+            @Html.DisplayNameFor(expression: model => model.Ativo)
         </th>
         <th></th>
     </tr>
@@ -32,19 +33,19 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Name)
+            @Html.DisplayFor(expression: modelItem => item.Name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Email)
+            @Html.DisplayFor(expression: modelItem => item.Email)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CPF)
+            @Html.DisplayFor(expression: modelItem => item.CPF)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DataMatricula)
+            @Html.DisplayFor(expression: modelItem => item.DataMatricula)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Ativo)
+            @Html.DisplayFor(expression: modelItem => item.Ativo)
         </td>
         <td>
 
