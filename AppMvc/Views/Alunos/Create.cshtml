@@ -1,0 +1,126 @@
+﻿@model AppMvc.Models.Aluno
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Aluno</h4>
+    <hr />
+
+    @Html.ValidationSummary(excludePropertyErrors: true,
+                            message: "",
+                            htmlAttributes: new { @class = "text-danger" })
+
+    @*Nome*@
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name,
+                       htmlAttributes: new { @class = "control-label col-md-2" })
+
+        <div class="col-md-10">
+
+            @Html.EditorFor(expression: model => model.Name,
+                            additionalViewData: new { htmlAttributes = new { @class = "form-control" } })
+
+
+            @Html.ValidationMessageFor(expression: model => model.Name,
+                                       validationMessage: "",
+                                       htmlAttributes: new { @class = "text-danger" })
+        </div>
+    </div>
+
+    @*Email*@
+    <div class="form-group">
+        @Html.LabelFor(expression: model => model.Email,
+                       htmlAttributes: new { @class = "control-label col-md-2" })
+
+        <div class="col-md-10">
+
+            @Html.EditorFor(expression: model => model.Email,
+                            additionalViewData: new { htmlAttributes = new { @class = "form-control" } })
+
+
+            @Html.ValidationMessageFor(expression: model => model.Email,
+                                       validationMessage: "",
+                                       htmlAttributes: new { @class = "text-danger" })
+
+        </div>
+    </div>
+
+    @*CPF*@
+    <div class="form-group">
+        @Html.LabelFor(expression: model => model.CPF,
+                       htmlAttributes: new { @class = "control-label col-md-2" })
+
+        <div class="col-md-10">
+
+            @Html.EditorFor(expression: model => model.CPF,
+                            additionalViewData: new { htmlAttributes = new { @class = "form-control" } })
+
+
+            @Html.ValidationMessageFor(expression: model => model.CPF,
+                                       validationMessage: "",
+                                       htmlAttributes: new { @class = "text-danger" })
+        </div>
+    </div>
+
+    @*Data*@
+    <div class="form-group">
+        @Html.LabelFor(expression: model => model.DataMatricula,
+                       htmlAttributes: new { @class = "control-label col-md-2" })
+
+        <div class="col-md-10">
+
+            @Html.EditorFor(expression: model => model.DataMatricula,
+                            additionalViewData: new { htmlAttributes = new { @class = "form-control" } })
+
+
+            @Html.ValidationMessageFor(expression: model => model.DataMatricula,
+                                       validationMessage: "",
+                                       htmlAttributes: new { @class = "text-danger" })
+
+        </div>
+    </div>
+
+    @*Ativo*@
+    <div class="form-group">
+        @Html.LabelFor(model => model.Ativo,
+                       htmlAttributes: new { @class = "control-label col-md-2" })
+
+        <div class="col-md-10">
+            <div class="checkbox">
+                @Html.EditorFor(expression: model => model.Ativo)
+
+
+                @Html.ValidationMessageFor(expression: model => model.Ativo,
+                                           validationMessage: "",
+                                           htmlAttributes: new { @class = "text-danger" })
+
+            </div>
+        </div>
+    </div>
+
+    @*Botão Create*@
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+
+</div>
+}
+
+<div>
+    @Html.ActionLink(linkText: "Back to List", 
+                     actionName: "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
