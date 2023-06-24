@@ -55,6 +55,8 @@ namespace AppMvc.Controllers {
         #region Metodos
         //
         // GET: /Account/Login
+        [HttpGet]
+        [Route("account-login")]
         [AllowAnonymous]
         public ActionResult Login(string returnUrl) {
             ViewBag.ReturnUrl = returnUrl;
@@ -64,6 +66,7 @@ namespace AppMvc.Controllers {
         //
         // POST: /Account/Login
         [HttpPost]
+        [Route("account-login")]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model,
